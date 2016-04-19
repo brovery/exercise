@@ -1,0 +1,17 @@
+<div class="row">
+
+    <h1>Today's Exercises</h1>
+    <div class="col-sm-12">
+        <h3 ng-bind = hc.todaysRoutine.name></h3>
+        <h4>
+            Sets: <span ng-bind="hc.todaysRoutine.sets"></span>
+            Rest: <span ng-bind="hc.todaysRoutine.rest"></span>
+        </h4>
+        <div ng-repeat="routine in hc.todaysRoutine.exercises">
+            <div ng-bind="routine.name"></div>
+            <div>For each rep: <span ng-bind="routine.reps"></span></div>
+            <div>Number of reps: <span ng-bind="routine.rep_num"></span></div>
+        </div>
+    </div>
+
+</div>
