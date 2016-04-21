@@ -11,11 +11,15 @@
         // list everything
         var hc = this;
         hc.todaysRoutine = homeService.todaysRoutine;
+        hc.fRoutine = fRoutine;
 
 
 
         // public functions
 
+        function fRoutine() {
+            homeService.fRoutine();
+        }
 
 
     }

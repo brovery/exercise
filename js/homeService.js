@@ -16,11 +16,25 @@
         hs.users = [];
         hs.completed = [];
         hs.routineId = 0;
+        hs.curUserId = 1;
 
         hs.getData = getData;
+        hs.fRoutine = fRoutine;
+
         getData();
 
         // public functions
+        function fRoutine() {
+            var myCompletedRoutine = {};
+            myCompletedRoutine.date = new Date();
+            myCompletedRoutine.user_id = hs.curUserId;
+            myCompletedRoutine.routine_id = hs.todaysRoutine.id;
+
+            hs.completed.push(myCompletedRoutine);
+
+            console.log(hs.completed);
+        }
+
         function getData() {
             // Manual Setup.
             hs.routines = [{
@@ -79,7 +93,8 @@
         // private functions
         function createRoutine() {
             // set the name, sets & rest of today's routine
-            hs.todaysRoutine.name =hs.routines[hs.routineId].name;
+            hs.todaysRoutine.id = hs.routines[hs.routineId].id;
+            hs.todaysRoutine.name = hs.routines[hs.routineId].name;
             hs.todaysRoutine.sets = hs.routines[hs.routineId].sets;
             hs.todaysRoutine.rest = hs.routines[hs.routineId].rest;
 

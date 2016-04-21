@@ -7,10 +7,17 @@
             Sets: <span ng-bind="hc.todaysRoutine.sets"></span>
             Rest: <span ng-bind="hc.todaysRoutine.rest"></span>
         </h4>
-        <div ng-repeat="routine in hc.todaysRoutine.exercises">
-            <div ng-bind="routine.name"></div>
-            <div>For each rep: <span ng-bind="routine.reps"></span></div>
-            <div>Number of reps: <span ng-bind="routine.rep_num"></span></div>
+        <div class="col-sm-12">
+            <div class="routine row" ng-repeat="routine in hc.todaysRoutine.exercises">
+                <div class="routineName col-sm-3" ng-bind="routine.name"></div>
+                <div class="routineReps col-sm-3">For each rep: <span ng-bind="routine.reps"></span></div>
+                <div class="routineReps col-sm-3">Number of reps: <span ng-bind="routine.rep_num"></span></div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="routineNotes">Notes regarding this workout:</label>
+            <textarea id="routineNotes" rows="3" class="form-control"></textarea>
+            <button class="btn btn-primary" ng-click="hc.fRoutine()">Finished!</button>
         </div>
     </div>
 
