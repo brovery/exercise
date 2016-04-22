@@ -11,14 +11,16 @@
         // list everything
         var hc = this;
         hc.todaysRoutine = homeService.todaysRoutine;
+        hc.routineNotes = "";
+        hc.curWeight = homeService.curWeight;
         hc.fRoutine = fRoutine;
 
-
+        console.log(hc.curWeight);
 
         // public functions
 
         function fRoutine() {
-            homeService.fRoutine();
+            homeService.fRoutine(hc.routineNotes);
         }
 
 

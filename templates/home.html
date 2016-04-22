@@ -1,6 +1,7 @@
 <div class="row">
 
     <h1>Today's Exercises</h1>
+    Current Weight: <input type="number" ng-model="hc.curWeight.weight"/>
     <div class="col-sm-12">
         <h3 ng-bind = hc.todaysRoutine.name></h3>
         <h4>
@@ -16,7 +17,7 @@
         </div>
         <div class="row">
             <label for="routineNotes">Notes regarding this workout:</label>
-            <textarea id="routineNotes" rows="3" class="form-control"></textarea>
+            <textarea id="routineNotes" rows="3" class="form-control" ng-model="hc.routineNotes"></textarea>
             <button class="btn btn-primary" ng-click="hc.fRoutine()">Finished!</button>
         </div>
     </div>
